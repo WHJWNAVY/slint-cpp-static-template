@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.21)
-project(my_application LANGUAGES CXX)
+project(slint_hello LANGUAGES CXX)
 
 find_package(Slint QUIET)
 if (NOT Slint_FOUND)
@@ -16,10 +16,10 @@ if (NOT Slint_FOUND)
   FetchContent_MakeAvailable(Slint)
 endif (NOT Slint_FOUND)
 
-add_executable(my_application src/main.cpp)
-target_link_libraries(my_application PRIVATE Slint::Slint)
-slint_target_sources(my_application ui/appwindow.slint)
+add_executable(slint_hello src/main.cpp)
+target_link_libraries(slint_hello PRIVATE Slint::Slint)
+slint_target_sources(slint_hello ui/appwindow.slint)
 # On Windows, copy the Slint DLL next to the application binary so that it's found.
-if (WIN32)
-    add_custom_command(TARGET my_application POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_RUNTIME_DLLS:my_application> $<TARGET_FILE_DIR:my_application> COMMAND_EXPAND_LISTS)
-endif()
+# if (WIN32)
+#     add_custom_command(TARGET slint_hello POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_RUNTIME_DLLS:slint_hello> $<TARGET_FILE_DIR:slint_hello> COMMAND_EXPAND_LISTS)
+# endif()

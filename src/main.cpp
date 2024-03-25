@@ -1,4 +1,17 @@
 #include "appwindow.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <windows.h>
+#include <windef.h>
+#include <roapi.h>
+
+HRESULT RoGetActivationFactory(
+    HSTRING activatableClassId,
+    REFIID  iid,
+    void    **factory
+) {
+    return S_OK;
+}
 
 int main(int argc, char **argv)
 {
