@@ -1,4 +1,4 @@
-import { Button, VerticalBox } from "std-widgets.slint";
+import { AboutSlint, Button, VerticalBox } from "std-widgets.slint";
 
 export component AppWindow inherits Window {
     in-out property<int> counter: 0;
@@ -31,6 +31,9 @@ export component AppWindow inherits Window {
             clicked => {
                 root.request-increase-value();
             }
+        }
+        AboutSlint {
+            preferred-height: 150px;
         }
      }
 }
